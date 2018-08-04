@@ -44,7 +44,7 @@ app.get('/api/timestamp/:data_string?',function(req, res, next){
             utc: dataSend.toUTCString()
         };
       }
-     else if(new RegExp('[0-9]+-[0-9]+-[0-9]+','ig').test(`${timeRequest}`))
+     else if(new RegExp('^[0-9]+-[0-9]+-[0-9]+$','ig').test(`${timeRequest}`))
      {
        //data with '-' example '2015-09-09'
         dataSend =new Date(`${timeRequest}`);
